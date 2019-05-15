@@ -5,7 +5,17 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <a href="/">Poll</a>
+    <form action="poll" method="post">
+        <label>
+            Имя:
+            <input type="text" name="name"/>
+        </label>
+        <label>
+            Описание:
+            <input type="text" name="description"/>
+        </label>
+        <button type="submit">Начать</button>
+    </form>
     <a href="/teachers">Teachers</a>
 </body>
 </html>
