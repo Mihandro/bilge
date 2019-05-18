@@ -1,5 +1,7 @@
 package com.grigorov.springgg.controller;
 
+import com.grigorov.springgg.repo.PollResultRepo;
+import com.grigorov.springgg.service.PollResultService;
 import com.grigorov.springgg.service.PollService;
 import com.grigorov.springgg.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,8 @@ public class MainController {
     private PollService pollService;
     @Autowired
     private TeacherService teacherService;
+    @Autowired
+    private PollResultService pollResultService;
 
     @PostMapping("poll")
     public String poll(@RequestParam(required = false) String name, @RequestParam(required = false) String description, Model model) {
@@ -28,7 +32,7 @@ public class MainController {
     @GetMapping("next/{index}")
     public String next(@PathVariable String index, Model model){
         pollService.nextPollCase(index, model);
-        if(((HashMap<String, ?>) model).size() < 2) return "index";
+        if(((HashMap<String, ?>) model).size() < 2) return "finish";
         return "poll";
     }
 
@@ -36,5 +40,17 @@ public class MainController {
     public String teachers(Model model){
         teacherService.getAllTeachers(model);
         return "teachers";
+    }
+
+    @GetMapping("/start")
+    public String start(){
+        return "start";
+    }
+
+    @GetMapping("/winners")
+    public String winners(Model model){
+        List<?> results = pollResultService.findAll();
+        model.addAttribute("results", results);
+        return "winners";
     }
 }

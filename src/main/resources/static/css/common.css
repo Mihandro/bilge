@@ -1,0 +1,43 @@
+.form-wrapper {
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+    border: black 1px solid;
+}
+
+form button {
+    margin: 0 auto;
+}
+
+form {
+    height: 200px;
+    padding-top: 50px;
+    background-color: #ffeeff;
+    font-size: 20px;
+
+}
+
+.button-wrapper {
+    width: 30%;
+    margin: 0 auto;
+    position: relative;
+    bottom: -20%;
+}
+
+button {
+    width: 100%;
+}
+
+form .label-wrapper{
+    margin: 20px;
+    padding-right: 20px;
+}
+
+form label {
+    width: 100%;
+}
+
+form label input{
+    float: right;
+}

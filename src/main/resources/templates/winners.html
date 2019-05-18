@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Start poll</title>
+    <link rel="stylesheet" href="/css/common.css" type="text/css"/>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Date</td>
+        </tr>
+        <!--/*@thymesVar id="results" type="com.grigorov.springgg.entity.PollResult"*/-->
+        <tr th:each="result: ${results}">
+            <td th:text="${result.teacher.name}">
+            <td th:text="${result.poll.endDate}">
+        </tr>
+    </table>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Finish</title>
+    <link rel="stylesheet" href="/css/common.css" type="text/css"/>
+</head>
+<body>
+<!--/*@thymesVar id="winner" type="com.grigorov.springgg.entity.Teacher"*/-->
+
+    <h1>The poll is over!!!</h1>
+    <h2>Winner: </h2>
+    <p th:text="${winner.name}"></p>
+    <img th:src="${winner.photo}"/>
+    <a href="/">Home</a>
+</body>
+</html>

@@ -3,10 +3,23 @@
 <head>
     <title>Poll</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/poll.css" type="text/css"/>
 </head>
 <body>
-    <a href="/next/0"><img th:src="${first.photo}"/></a>
-    <a href="/next/1"><img th:src="${second.photo}"/></a>
+    <h1>Choose the better one</h1>
+    <div id="poll-box">
+        <div class="img-wrapper">
+        <a href="/next/0">
+            <!--/*@thymesVar id="first" type="com.grigorov.springgg.entity.Teacher"*/-->
+            <img th:src="${first.photo}"/>
+        </a>
+        </div>
+        <div class="img-wrapper">
+        <a href="/next/1">
+            <!--/*@thymesVar id="second" type="com.grigorov.springgg.entity.Teacher"*/-->
+            <img th:src="${second.photo}"/>
+        </a>
+        </div>
+    </div>
 </body>
 </html>

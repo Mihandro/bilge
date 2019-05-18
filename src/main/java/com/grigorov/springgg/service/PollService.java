@@ -35,6 +35,7 @@ public class PollService {
             pollRepo.save(poll);
             PollResult pollResult = new PollResult();
             pollResult.setTeacher(pollCase.get(intIndex));
+            model.addAttribute("winner", pollCase.get(intIndex));
             pollResult.setPoll(poll);
             pollResultRepo.save(pollResult);
             return;
